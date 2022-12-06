@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/07 05:00:32 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/07 08:27:10 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,10 @@ unsigned int color(char *value);
 t_object    *parse_lumen(char **values);
 t_v3d       verteur_3d(char  *value);
 t_object    *parse_camera(char **values);
+t_object    *parse_lumiere(char **values);
+t_object    *parse_sphere(char ** values);
+t_object    *parse_plan(char **values);
+t_object    *parse_cylindre(char **values)
 bool_t  is_empty(char **str);
 
 #endif
