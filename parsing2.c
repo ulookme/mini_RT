@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:21:45 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/07 04:24:18 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/07 10:00:09 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ unsigned int color(char *value)
     rgb = ft_split(value, ',');
     if (!rgb)
         return(0);
-    if (rgb[0] && rgb[1] && rgb[2] && !rgb[3])
+    if (!(rgb[0] && rgb[1] && rgb[2] && !rgb[3]))
     {
         free_array(rgb);
         return(0);
@@ -77,7 +77,7 @@ unsigned int color(char *value)
 t_object  *parse_lumen(char **values)
 {
     t_object *obj;
-    if(values[1] && values[2] && !values[3])
+    if(!(values[1] && values[2] && !values[3]))
         return NULL;
     obj = creat_object(OBJ_A);
     if(!obj)
@@ -95,7 +95,7 @@ t_v3d   verteur_3d(char  *value)
     vec.x = NAN;
     if (!elem)
         return(vec);
-    if (elem[0] && elem[1] && elem[2] && !elem[3])
+    if (!(elem[0] && elem[1] && elem[2] && !elem[3]))
     {
         free_array(elem);
         return(vec);

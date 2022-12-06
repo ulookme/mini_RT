@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:21:53 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/07 08:08:22 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/07 09:56:51 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,28 +31,25 @@ bool_t  is_empty(char **str)
 
 void    obj_addback(t_object **lst, t_object *insert)
 {
-    t_object    *cur;
+	if (*lst)
+    {
+        t_object	*elem;
 
-    if (!lst)
-        return ;
-    cur = *lst;
-    if (!cur)
-    {
-        *lst = insert;
-        return ;
+    	if (lst == NULL)
+	    	return ;
+    	elem = *lst;
+    	while (elem->next != NULL)
+		    elem = elem->next;
+    	elem->next = insert;
     }
-    while (cur)
-    {
-        while (cur->next)
-            cur = cur->next;
-        cur->next = insert;
-    }
+	else
+		*lst = insert;
 }
 
 t_object *parse_camera(char **values)
 {
     t_object *obj;
-    if (values[1] && values[2] && values[3] && !values[4])
+    if (!(values[1] && values[2] && values[3] && !values[4]))
         return NULL;
     obj = creat_object(OBJ_C);
     if(!obj)
@@ -66,7 +63,7 @@ t_object *parse_camera(char **values)
 t_object *parse_lumiere(char **values)
 {
     t_object *obj;
-    if (values[1] && values[2] && values[3] && !values[4])
+    if (!(values[1] && values[2] && values[3] && !values[4]))
         return NULL;
     obj = creat_object(OBJ_L);
     if (!obj)
@@ -80,7 +77,7 @@ t_object *parse_lumiere(char **values)
 t_object *parse_sphere(char ** values)
 {
     t_object *obj;
-    if (values[1] && values[2] && values[3] && !values[4])
+    if (!(values[1] && values[2] && values[3] && !values[4]))
         return NULL;
     obj = creat_object(OBJ_SP);
     if (!obj)

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   delete.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 04:22:20 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/07 10:12:44 by charleshajj      ###   ########.fr       */
+/*   Created: 2022/12/07 10:01:57 by charleshajj       #+#    #+#             */
+/*   Updated: 2022/12/07 10:07:50 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int main(int argc, char **argv)
+void    clearScene(t_object *scene)
 {
-	t_object	*scene;
+    t_object    *nxt;
 
-	scene = check_open(argc, argv);
-	if (!scene)
-		return (1);
-	clearScene(scene);
-	return(0);
+    while (scene)
+    {
+        nxt = scene->next;
+        if (scene->object)
+            free(scene->object);
+        free(scene);
+        scene = nxt;
+    }
 }

@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:24:02 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/07 04:24:08 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/07 10:00:19 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,16 @@ t_object *element_file(char **str)
     else if (!ft_strncmp(str[0], "A", 2))
         element = parse_lumen(str);
     else if (!ft_strncmp(str[0], "C", 2))
-        printf("camera\n");
+        element = parse_camera(str);
     else if (!ft_strncmp(str[0], "L", 2))
-        printf("lumiere\n");
+        element = parse_lumiere(str);
     else if (!ft_strncmp(str[0], "sp", 3))
-        printf("sphere\n");
+        element = parse_cylindre(str);
     else if (!ft_strncmp(str[0], "pl", 3))
-        printf("plan\n");
+        element = parse_plan(str);
     else if (!ft_strncmp(str[0], "cy", 3))
-        printf("cylindre\n");
+        element = parse_cylindre(str);
     else if (!is_empty(str))
-        printf("invalid\n");
+        element = creat_object(OBJ_INVALID);
     return (element);
 }
