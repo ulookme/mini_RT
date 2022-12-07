@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 04:22:20 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/07 10:30:11 by charleshajj      ###   ########.fr       */
+/*   Created: 2022/12/08 02:49:54 by charleshajj       #+#    #+#             */
+/*   Updated: 2022/12/08 02:55:23 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int main(int argc, char **argv)
+void msg_error(char **message)
 {
-	t_object	*scene;
-
-	scene = check_open(argc, argv);
-	if (!scene)
-		return (1);
-	if (check_scene(scene))
-		printf("Valid scene\n");
-	clearScene(scene);
-	return(0);
+	write(2, "Error\n", 6);
+	write(2, message, ft_strlen(message));
+	write(2, "\n", 1);
+	exit(-1);
 }

@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/07 10:09:01 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/08 04:15:32 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,52 +30,52 @@
 #define OBJ_CY 5
 
 typedef struct s_vecteur3d{
-    float  x;
-    float  y;
-    float  z; 
+	float  x;
+	float  y;
+	float  z; 
 }   t_v3d;
 
 typedef struct      s_object{
-    void*           object;
-    int             type;
-    struct s_object * next;
+	void*           object;
+	int             type;
+	struct s_object * next;
 }   t_object;
 
 typedef struct  s_lumiere_ambiante{
-    float   ratio;
-    unsigned int RGB;
+	float   ratio;
+	unsigned int RGB;
 }   t_la;
 
 typedef struct s_camera{
-    t_v3d view;
-    t_v3d pos;
-    int   fov;   
+	t_v3d view;
+	t_v3d pos;
+	int   fov;   
 }   t_cam;
 
 typedef struct  s_lumiere{
-    t_v3d pos;
-    float  ratio;  
-    unsigned int RGB;
+	t_v3d pos;
+	float  ratio;  
+	unsigned int RGB;
 }   t_lum;
 
 typedef struct  s_sphere{
-    t_v3d pos;
-    float  diametre;  
-    unsigned int RGB;
+	t_v3d pos;
+	float  diametre;  
+	unsigned int RGB;
 }   t_sphere;
 
 typedef struct  s_plan{
-    t_v3d view;
-    t_v3d pos; 
-    unsigned int RGB;
+	t_v3d view;
+	t_v3d pos; 
+	unsigned int RGB;
 }   t_plan;
 
 typedef struct  s_cylindre{
-    t_v3d view;
-    t_v3d pos;
-    float  diametre; 
-    float  hauteur; 
-    unsigned int RGB;
+	t_v3d view;
+	t_v3d pos;
+	float  diametre; 
+	float  hauteur; 
+	unsigned int RGB;
 }   t_cylindre;
 
 typedef unsigned char   bool_t;
@@ -96,5 +96,10 @@ t_object        *parse_plan(char **values);
 t_object        *parse_cylindre(char **values);
 bool_t          is_empty(char **str);
 void            clearScene(t_object *scene);
+void 			msg_error(char **message);
+bool_t			check_scene(t_object *scene);
+bool_t			check_cam(t_cam *c, uint8_t *f);
+bool_t			check_amb(t_la *a, uint8_t *f);
+bool_t			check_lumiere(t_lum *l, uint8_t *f);
 
 #endif
