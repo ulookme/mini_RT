@@ -6,14 +6,28 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 04:14:06 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/08 09:33:35 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/08 00:51:30 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
+bool_t	check_amb(t_la *a, uint8_t *f)
+{
+	if ((*f) & 1 << 0)
+		(*f) |= 1 << 4;
+	(*f) |= 1 << 0;
+	if (a->ratio >= 0.f && a->ratio <= 1.f \
+		&& a->RGB)
+		return (1);
+	printf("Error: Invalid Ambiance Settings\n");
+	return (0);
+}
+
 bool_t	check_cam(t_cam *c, uint8_t *f)
 {
+	if ((*f) & 1 << 1)
+		(*f) |= 1 << 5;
 	(*f) |= 1 << 1;
 	if (c->view.x != NAN \
 		&& c->pos.x >= 0.f && c->pos.x <= 1.f \
@@ -25,18 +39,11 @@ bool_t	check_cam(t_cam *c, uint8_t *f)
 	return (0);
 }
 
-bool_t	check_amb(t_la *a, uint8_t *f)
+bool_t	check_lumiere(t_lum *l, uint8_t *f)
 {
-	(*f) |= 1 << 0;
-	if (a->ratio >= 0.f && a->ratio <= 1.f \
-		&& a->RGB)
-		return (1);
-	printf("Error: Invalid Ambiance Settings\n");
-	return (0);
-}
-
-bool_t	check_lumiere(t_lum *l)
-{
+	if ((*f) & 1 << 2)
+		(*f) |= 1 << 6;
+	(*f) |= 1 << 2;
 	if(l->pos.x != NAN && l->pos.y != NAN && l->pos.z != NAN \
 		&& l->ratio >= 0.f && l->ratio <= 1.f \
 		&& l->RGB )

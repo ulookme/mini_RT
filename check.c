@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:17:34 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/08 09:58:19 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/08 00:53:04 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool_t	check_current(t_object *c, uint8_t *f)
 		if (!check_cam((t_cam *) c->object, f))
 			return (1);
 	if (c->type == OBJ_L)
-		if (!check_lumiere((t_lum *) c->object))
+		if (!check_lumiere((t_lum *) c->object, f))
 			return (1);
 	if (c->type == OBJ_SP)
 		if(!check_sphere((t_sphere *) c->object))
@@ -52,11 +52,15 @@ bool_t	check_scene(t_object *scene)
 			return (1);
 		current = current->next;
 	}
-	if (flags & 1 << 0 && flags & 1 << 1)
+	if (flags & 1 << 0 && flags & 1 << 1 && flags & 1 << 2 \
+		&& !(flags & 1 << 4) && !(flags & 1 << 5) && !(flags & 1 << 6))
 	{
 		printf("Valid scene registered\n");
 		return (0);
 	}
-	printf("Error: Missing Camera and / or Ambiance light\n");
+	else if (flags & 1 << 0 && flags & 1 << 1 && flags & 1 << 2)
+		printf("Error: Extra Camera and/or Ambiance light and/or Light found\n");
+	else
+		printf("Error: Missing Camera and / or Ambiance light and/or Light\n");
 	return (1);
 }

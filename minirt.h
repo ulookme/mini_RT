@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/08 09:03:02 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/08 00:48:57 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,21 +87,25 @@ t_object        *element_file(char **str);
 t_object        *creat_object(int type);
 void	        free_array(char **str);
 unsigned int    color(char *value);
-t_object        *parse_lumen(char **values);
 t_v3d           verteur_3d(char  *value);
+
+t_object        *parse_lumen(char **values);
 t_object        *parse_camera(char **values);
 t_object        *parse_lumiere(char **values);
 t_object        *parse_sphere(char ** values);
 t_object        *parse_plan(char **values);
 t_object        *parse_cylindre(char **values);
+
 bool_t          is_empty(char **str);
 void            clearScene(t_object *scene);
 void 			msg_error(char *message);
+
 bool_t			check_scene(t_object *scene);
 bool_t			check_cam(t_cam *c, uint8_t *f);
 bool_t			check_amb(t_la *a, uint8_t *f);
-bool_t			check_lumiere(t_lum *l);
+bool_t			check_lumiere(t_lum *l, uint8_t *f);
 bool_t 			check_sphere(t_sphere *s);
 bool_t			check_plan(t_plan *p);
 bool_t			check_cylindre(t_cylindre *p);
+
 #endif
