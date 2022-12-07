@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:22:20 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/07 10:30:11 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/08 09:46:09 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ int main(int argc, char **argv)
 
 	scene = check_open(argc, argv);
 	if (!scene)
+	{
+		printf("Error: Memory allocation failed\n");
 		return (1);
-	if (check_scene(scene))
-		printf("Valid scene\n");
+	}
+	if (!check_scene(scene))
+		;
 	clearScene(scene);
 	return(0);
 }

@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_error.c                                      :+:      :+:    :+:   */
+/*   check_object2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 02:49:54 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/08 09:02:46 by charleshajj      ###   ########.fr       */
+/*   Created: 2022/12/08 05:18:41 by charleshajj       #+#    #+#             */
+/*   Updated: 2022/12/08 09:33:55 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-void msg_error(char *message)
+bool_t	check_cylindre(t_cylindre *p)
 {
-	write(2, "Error\n", 6);
-	write(2, message, ft_strlen(message));
-	write(2, "\n", 1);
-	exit(-1);
+	if (p->view.x != NAN \
+		&& p->pos.x >= -1.f && p->pos.x <= 1.f \
+		&& p->pos.y >= -1.f && p->pos.y <= 1.f \
+		&& p->pos.z >= -1.f && p->pos.z <= 1.f \
+		&& p->RGB && p->diametre != NAN && p->hauteur != NAN)
+		return (1);
+	printf("Error: Invalid Cylinder Settings\n");
+	return (0);
 }

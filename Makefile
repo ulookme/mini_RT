@@ -6,13 +6,13 @@
 #    By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 04:22:09 by charleshajj       #+#    #+#              #
-#    Updated: 2022/12/08 04:29:10 by charleshajj      ###   ########.fr        #
+#    Updated: 2022/12/08 08:50:50 by charleshajj      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = miniRT
 SRC =	main.c parsing.c parsing2.c parsing3.c parsing4.c \
-		check.c delete.c parse_error.c check_object.c
+		check.c delete.c parse_error.c check_object.c check_object2.c
 
 OBJ = $(SRC:.c=.o)
 
