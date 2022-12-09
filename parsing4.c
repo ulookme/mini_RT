@@ -6,15 +6,23 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 07:43:30 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/08 10:06:51 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/09 18:32:23 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-t_object *parse_plan(char **values)
+/**
+ * @brief parsing object plan
+ * view -> vecteur_3d()
+ * pos -> vecteur_3d()
+ * RGB -> color()
+ * @param values 
+ * @return t_object* 
+ */
+t_object	*parse_plan(char **values)
 {
-	t_object *obj;
+	t_object	*obj;
 
 	obj = creat_object(OBJ_PL);
 	if (!obj)
@@ -28,9 +36,19 @@ t_object *parse_plan(char **values)
 	return (obj);
 }
 
-t_object *parse_cylindre(char **values)
+/**
+ * @brief objet cynlindre parsing 
+ * view
+ * pos
+ * diametre
+ * hauteur
+ * RGB
+ * @param values 
+ * @return t_object* 
+ */
+t_object	*parse_cylindre(char **values)
 {
-	t_object *obj;
+	t_object	*obj;
 
 	obj = creat_object(OBJ_CY);
 	if (!obj)
@@ -46,4 +64,3 @@ t_object *parse_cylindre(char **values)
 	((t_cylindre *) obj->object)->RGB = color(values[5]);
 	return (obj);
 }
-

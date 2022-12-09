@@ -6,12 +6,17 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 02:49:54 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/08 09:02:46 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/09 18:33:10 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
+/**
+ * @brief message d'erreur
+ * 
+ * @param message 
+ */
 void msg_error(char *message)
 {
 	write(2, "Error\n", 6);

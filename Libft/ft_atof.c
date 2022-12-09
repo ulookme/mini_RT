@@ -6,13 +6,12 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:12 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/07 04:23:35 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/09 18:34:30 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <math.h>
-
 
 double	ft_atof(const char *str)
 {

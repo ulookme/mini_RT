@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/08 00:48:57 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/09 18:42:23 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,27 @@
 # include <unistd.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-#include "MLX42/include/MLX42/MLX42.h"
+# include "MLX42/include/MLX42/MLX42.h"
 
-#define OBJ_INVALID -1
-#define OBJ_A 0
-#define OBJ_C 1
-#define OBJ_L 2
-#define OBJ_SP 3
-#define OBJ_PL 4
-#define OBJ_CY 5
+# define OBJ_INVALID -1
+# define OBJ_A 0
+# define OBJ_C 1
+# define OBJ_L 2
+# define OBJ_SP 3
+# define OBJ_PL 4
+# define OBJ_CY 5
 
 typedef struct s_vecteur3d{
-	float  x;
-	float  y;
-	float  z; 
-}   t_v3d;
+	float	x;
+	float	y;
+	float	z;
+}	t_v3d;
 
-typedef struct      s_object{
-	void*           object;
-	int             type;
-	struct s_object * next;
-}   t_object;
+typedef struct	s_object{
+	void*			object;
+	int				type;
+	struct s_object	* next;
+}	t_object;
 
 typedef struct  s_lumiere_ambiante{
 	float   ratio;
@@ -85,6 +85,7 @@ t_object        *check_open( int argc, char  **argv);
 void            obj_addback(t_object **lst, t_object *insert);
 t_object        *element_file(char **str);
 t_object        *creat_object(int type);
+t_object		*malloc_type_object(t_object *object, int type);
 void	        free_array(char **str);
 unsigned int    color(char *value);
 t_v3d           verteur_3d(char  *value);
@@ -101,11 +102,13 @@ void            clearScene(t_object *scene);
 void 			msg_error(char *message);
 
 bool_t			check_scene(t_object *scene);
+bool_t 			check_flag(uint8_t *f);
 bool_t			check_cam(t_cam *c, uint8_t *f);
 bool_t			check_amb(t_la *a, uint8_t *f);
 bool_t			check_lumiere(t_lum *l, uint8_t *f);
 bool_t 			check_sphere(t_sphere *s);
 bool_t			check_plan(t_plan *p);
 bool_t			check_cylindre(t_cylindre *p);
+
 
 #endif
