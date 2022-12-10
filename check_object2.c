@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:18:41 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/09 15:48:48 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/10 17:28:22 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
  * @brief check cylindre verif que les conditions de scene sont remplie.
  * sinon message d'erreur.
  * @param p 
- * @return bool_t 
+ * @return t_bool
  */
-bool_t	check_cylindre(t_cylindre *p)
+t_bool	check_cylindre(t_cylindre *p)
 {
 	if (p->view.x != NAN \
 		&& p->pos.x >= -1.f && p->pos.x <= 1.f \

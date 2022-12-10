@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:21:53 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/09 18:27:13 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/10 17:24:35 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
  * @brief is_empty()
  * verifier si un ligne est vide.
  * @param str 
- * @return bool_t 
+ * @return t_bool 
  */
-bool_t	is_empty(char **str)
+t_bool	is_empty(char **str)
 {
 	int	i;
 	int	y;

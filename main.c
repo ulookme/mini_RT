@@ -6,13 +6,13 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:22:20 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/08 10:32:22 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/10 17:07:13 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_object	*scene;
 
@@ -25,5 +25,5 @@ int main(int argc, char **argv)
 	if (!check_scene(scene))
 		;
 	clearScene(scene);
-	return(0);
+	return (0);
 }

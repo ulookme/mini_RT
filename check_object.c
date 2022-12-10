@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 04:14:06 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/09 15:48:22 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/10 17:28:04 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
  * R,G,B dans le range [0-255]
  * @param a 
  * @param f 
- * @return bool_t 
+ * @return t_bool
  */
-bool_t	check_amb(t_la *a, uint8_t *f)
+t_bool	check_amb(t_la *a, uint8_t *f)
 {
 	if ((*f) & 1 << 0)
 		(*f) |= 1 << 4;
@@ -38,9 +38,9 @@ bool_t	check_amb(t_la *a, uint8_t *f)
  * fov Champ de vision horizontal en degrés entre [0,180]
  * @param c 
  * @param f 
- * @return bool_t 
+ * @return t_bool
  */
-bool_t	check_cam(t_cam *c, uint8_t *f)
+t_bool	check_cam(t_cam *c, uint8_t *f)
 {
 	if ((*f) & 1 << 1)
 		(*f) |= 1 << 5;
@@ -62,9 +62,9 @@ bool_t	check_cam(t_cam *c, uint8_t *f)
  * RGB :  range [0- 255]
  * @param l 
  * @param f 
- * @return bool_t 
+ * @return t_bool
  */
-bool_t	check_lumiere(t_lum *l, uint8_t *f)
+t_bool	check_lumiere(t_lum *l, uint8_t *f)
 {
 	if ((*f) & 1 << 2)
 		(*f) |= 1 << 6;
@@ -82,9 +82,9 @@ bool_t	check_lumiere(t_lum *l, uint8_t *f)
  * diameter: float
  * RGB :  range [0-255]
  * @param s 
- * @return bool_t 
+ * @return t_bool 
  */
-bool_t	check_sphere(t_sphere *s)
+t_bool	check_sphere(t_sphere *s)
 {
 	if (s->pos.x != NAN && s->pos.y != NAN && s->pos.z != NAN \
 		&& s->RGB && s->diametre)
@@ -99,9 +99,9 @@ bool_t	check_sphere(t_sphere *s)
  * pos : vecteur d’orientation 3d range [-1,1]
  * RGB : range [0-255]
  * @param p 
- * @return bool_t 
+ * @return t_bool
  */
-bool_t	check_plan(t_plan *p)
+t_bool	check_plan(t_plan *p)
 {
 	if (p->view.x != NAN \
 		&& p->pos.x >= -1.f && p->pos.x <= 1.f \

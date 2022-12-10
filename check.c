@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:17:34 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/09 15:09:44 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/10 17:26:55 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
  *  Activation de la fonction check lier a l'element.
  * @param c 
  * @param f 
- * @return bool_t 
+ * @return t_bool 
  */
-bool_t	check_current(t_object *c, uint8_t *f)
+t_bool	check_current(t_object *c, uint8_t *f)
 {
 	if (c->type == OBJ_A)
 		if (!check_amb((t_la *) c->object, f))
@@ -49,7 +49,7 @@ bool_t	check_current(t_object *c, uint8_t *f)
  * @param scene 
  * @return bool_t 
  */
-bool_t	check_scene(t_object *scene)
+t_bool	check_scene(t_object *scene)
 {
 	t_object	*current;
 	uint8_t		flags;
@@ -77,7 +77,7 @@ bool_t	check_scene(t_object *scene)
  * @param f 
  * @return bool_t 
  */
-bool_t	check_flag(uint8_t *f)
+t_bool	check_flag(uint8_t *f)
 {
 	if ((*f) & 1 << 0 && (*f) & 1 << 1 && (*f) & 1 << 2 \
 		&& !((*f) & 1 << 4) && !((*f) & 1 << 5) && !((*f) & 1 << 6))
