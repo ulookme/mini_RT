@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:21:45 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/09 17:58:46 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/11 19:11:16 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_object	*parse_lumen(char **values)
 	if (!(values[1] && values[2] && !values[3]))
 		return (obj);
 	((t_la *) obj->object)->ratio = ft_atof(values[1]);
-	((t_la *) obj->object)->RGB = color(values[2]);
+	((t_la *) obj->object)->rgb = color(values[2]);
 	return (obj);
 }
 

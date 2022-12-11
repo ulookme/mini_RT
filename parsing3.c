@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:21:53 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/10 17:24:35 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/11 18:39:32 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ t_object	*parse_lumiere(char **values)
 		return (obj);
 	((t_lum *) obj->object)->pos = verteur_3d(values[1]);
 	((t_lum *) obj->object)->ratio = ft_atof(values[2]);
-	((t_lum *) obj->object)->RGB = color(values[3]);
+	((t_lum *) obj->object)->rgb = color(values[3]);
 	return (obj);
 }
 
@@ -126,6 +126,6 @@ t_object	*parse_sphere(char **values)
 		return (obj);
 	((t_sphere *) obj->object)->pos = verteur_3d(values[1]);
 	((t_sphere *) obj->object)->diametre = ft_atof(values[2]);
-	((t_sphere *) obj->object)->RGB = color(values[3]);
+	((t_sphere *) obj->object)->rgb = color(values[3]);
 	return (obj);
 }

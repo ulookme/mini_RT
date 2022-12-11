@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:22:20 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/10 17:07:13 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/11 19:08:55 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	main(int argc, char **argv)
 	}
 	if (!check_scene(scene))
 		;
-	clearScene(scene);
+	clear_scene(scene);
 	return (0);
 }

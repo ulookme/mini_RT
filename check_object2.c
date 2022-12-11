@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 05:18:41 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/10 17:28:22 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/11 18:31:12 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_bool	check_cylindre(t_cylindre *p)
 		&& p->pos.x >= -1.f && p->pos.x <= 1.f \
 		&& p->pos.y >= -1.f && p->pos.y <= 1.f \
 		&& p->pos.z >= -1.f && p->pos.z <= 1.f \
-		&& p->RGB && p->diametre != NAN && p->hauteur != NAN)
+		&& p->rgb && p->diametre != NAN && p->hauteur != NAN)
 		return (1);
 	printf("Error: Invalid Cylinder Settings\n");
 	return (0);

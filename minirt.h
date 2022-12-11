@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/10 17:28:59 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/11 18:26:48 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,47 +36,47 @@ typedef struct s_vecteur3d{
 }	t_v3d;
 
 typedef struct s_object{
-	void*			object;
+	void			*object;
 	int				type;
-	struct s_object	* next;
+	struct s_object	*next;
 }	t_object;
 
-typedef struct  s_lumiere_ambiante{
-	float   ratio;
-	unsigned int RGB;
-}   t_la;
+typedef struct s_lumiere_ambiante{
+	float			ratio;
+	unsigned int	rgb;
+}	t_la;
 
 typedef struct s_camera{
-	t_v3d view;
-	t_v3d pos;
-	int   fov;   
-}   t_cam;
+	t_v3d	view;
+	t_v3d	pos;
+	int		fov;
+}	t_cam;
 
-typedef struct  s_lumiere{
-	t_v3d pos;
-	float  ratio;  
-	unsigned int RGB;
-}   t_lum;
+typedef struct s_lumiere{
+	t_v3d			pos;
+	float			ratio;
+	unsigned int	rgb;
+}	t_lum;
 
-typedef struct  s_sphere{
-	t_v3d pos;
-	float  diametre;  
-	unsigned int RGB;
-}   t_sphere;
+typedef struct s_sphere{
+	t_v3d			pos;
+	float			diametre;
+	unsigned int	rgb;
+}	t_sphere;
 
-typedef struct  s_plan{
-	t_v3d view;
-	t_v3d pos; 
-	unsigned int RGB;
-}   t_plan;
+typedef struct s_plan{
+	t_v3d			view;
+	t_v3d			pos;
+	unsigned int	rgb;
+}	t_plan;
 
-typedef struct  s_cylindre{
-	t_v3d view;
-	t_v3d pos;
-	float  diametre; 
-	float  hauteur; 
-	unsigned int RGB;
-}   t_cylindre;
+typedef struct s_cylindre{
+	t_v3d			view;
+	t_v3d			pos;
+	float			diametre;
+	float			hauteur;
+	unsigned int	rgb;
+}	t_cylindre;
 
 typedef unsigned char	t_bool;
 
