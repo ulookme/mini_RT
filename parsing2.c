@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:21:45 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/11 19:11:16 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/15 18:34:28 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,25 @@ void	free_array(char **str)
  * @param value 
  * @return unsigned int 
  */
-unsigned int	color(char *value)
+t_rgb	color(char *value)
 {
-	char	**rgb;
-	int		r;
-	int		g;
-	int		b;
+	char	**elem;
+	t_rgb	rgb;
 
-	rgb = ft_split(value, ',');
-	if (!rgb)
-		return (0);
-	if (!(rgb[0] && rgb[1] && rgb[2] && !rgb[3]))
+	elem = ft_split(value, ',');
+	rgb.r = NAN;
+	if (!elem)
+		return (rgb);
+	if (!(elem[0] && elem[1] && elem[2] && !elem[3]))
 	{
-		free_array(rgb);
-		return (0);
+		free_array(elem);
+		return (rgb);
 	}
-	r = ft_atoi(rgb[0]);
-	g = ft_atoi(rgb[1]);
-	b = ft_atoi(rgb[2]);
-	free_array(rgb);
-	if ((r <= 255 && r >= 0) && (g <= 255 && g >= 0) && (b <= 255 && b >= 0))
-		return ((r << 24) + (g << 16) + (b << 8) + 0xFF);
-	return (0);
+	rgb.r = ft_atoi(elem[0]);
+	rgb.g = ft_atoi(elem[1]);
+	rgb.b = ft_atoi(elem[2]);
+	free_array(elem);
+	return (rgb);
 }
 
 /**

@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/11 18:26:48 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/15 17:45:37 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@
 # define OBJ_PL 4
 # define OBJ_CY 5
 
+typedef struct s_rgb
+{
+	uint8_t			r;
+	uint8_t			g;
+	uint8_t			b;
+}					t_rgb;
+
 typedef struct s_vecteur3d{
 	float	x;
 	float	y;
@@ -43,7 +50,7 @@ typedef struct s_object{
 
 typedef struct s_lumiere_ambiante{
 	float			ratio;
-	unsigned int	rgb;
+	t_rgb			rgb;
 }	t_la;
 
 typedef struct s_camera{
@@ -55,19 +62,19 @@ typedef struct s_camera{
 typedef struct s_lumiere{
 	t_v3d			pos;
 	float			ratio;
-	unsigned int	rgb;
+	t_rgb			rgb;
 }	t_lum;
 
 typedef struct s_sphere{
 	t_v3d			pos;
 	float			diametre;
-	unsigned int	rgb;
+	t_rgb			rgb;
 }	t_sphere;
 
 typedef struct s_plan{
 	t_v3d			view;
 	t_v3d			pos;
-	unsigned int	rgb;
+	t_rgb			rgb;
 }	t_plan;
 
 typedef struct s_cylindre{
@@ -75,7 +82,7 @@ typedef struct s_cylindre{
 	t_v3d			pos;
 	float			diametre;
 	float			hauteur;
-	unsigned int	rgb;
+	t_rgb			rgb;
 }	t_cylindre;
 
 typedef unsigned char	t_bool;
@@ -87,7 +94,7 @@ t_object		*element_file(char **str);
 t_object		*creat_object(int type);
 t_object		*malloc_type_object(t_object *object, int type);
 void			free_array(char **str);
-unsigned int	color(char *value);
+t_rgb			color(char *value);
 t_v3d			verteur_3d(char *value);
 
 t_object		*parse_lumen(char **values);
@@ -109,5 +116,6 @@ t_bool			check_lumiere(t_lum *l, uint8_t *f);
 t_bool			check_sphere(t_sphere *s);
 t_bool			check_plan(t_plan *p);
 t_bool			check_cylindre(t_cylindre *p);
+t_bool			check_color(t_rgb *c);
 
 #endif
