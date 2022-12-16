@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:21:24 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/16 19:09:52 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/16 21:35:49 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,12 @@ double	vlength(t_v3d vec)
     return (sqrt(vlength2(vec)));
 }
 
+t_v3d	vcross(t_v3d v1, t_v3d v2)
+{
+    t_v3d new;
+
+    new.x = v1.y * v2.z - v1.z * v2.y;
+    new.y = v1.z * v2.x - v1.x * v2.z;
+    new.z = v1.x * v2.y - v1.y * v2.x;
+    return (new);
+}

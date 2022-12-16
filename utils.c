@@ -6,12 +6,19 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 18:43:32 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/16 19:12:33 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/16 22:04:47 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
-
+/**
+ * @brief constructeur point 3
+ * 
+ * @param x 
+ * @param y 
+ * @param z 
+ * @return t_v3d 
+ */
 t_v3d	point(double x, double y, double z)
 {
 	t_v3d	point;
@@ -22,6 +29,14 @@ t_v3d	point(double x, double y, double z)
 	return (point);
 }
 
+/**
+ * @brief constructeur vector
+ * 
+ * @param x 
+ * @param y 
+ * @param z 
+ * @return t_v3d 
+ */
 t_v3d	vec3(double x, double y, double z)
 {
 	t_v3d	vec;
@@ -32,7 +47,15 @@ t_v3d	vec3(double x, double y, double z)
 	return (vec);
 }
 
-t_rgb	couleur(double r, double g, double b)
+/**
+ * @brief constructeur color
+ * 
+ * @param r 
+ * @param g 
+ * @param b 
+ * @return t_v3d 
+ */
+t_v3d	couleur(double r, double g, double b)
 {
 	t_rgb colors;
 
@@ -42,6 +65,14 @@ t_rgb	couleur(double r, double g, double b)
     return (colors);
 }
 
+/**
+ * @brief ensemble de valeurs vectorielles
+ * 
+ * @param vec 
+ * @param x 
+ * @param y 
+ * @param z 
+ */
 void	vset(t_v3d *vec, double x, double y, double z)
 {
 	vec->x = x;

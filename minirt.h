@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/16 19:10:40 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/16 21:43:03 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,8 +123,16 @@ double			vector_dot(t_v3d v1, t_v3d v2);
 double			vlength(t_v3d vec);
 double			vlength2(t_v3d v1, t_v3d v2);
 
+void			vset(t_v3d *vec, double x, double y, double z);
+
 t_v3d			point(double x, double y, double z);
 t_v3d			vec3(double x, double y, double z);
-t_v3d			color3(double r, double g, double b);
+t_v3d			couleur(double r, double g, double b);
+t_v3d			vcross(t_v3d v1, t_v3d v2);
+t_v3d			vplus(t_v3d v1, t_v3d v2);
+t_v3d			vminus(t_v3d v1, t_v3d v2);
+t_v3d			vmult_(t_v3d v1, t_v3d v2);
+t_v3d			vunit(t_v3d v1);
+t_v3d			vmin(t_v3d v1, t_v3d v2);
 
 #endif
