@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/15 23:30:39 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/16 19:10:40 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,6 @@
 # define OBJ_SP 3
 # define OBJ_PL 4
 # define OBJ_CY 5
-
-typedef struct s_ray{
-	t_v3d	start;
-	t_v3d	dir;
-}	t_ray;
 
 typedef struct s_rgb
 {
@@ -122,9 +117,14 @@ t_bool			check_sphere(t_sphere *s);
 t_bool			check_plan(t_plan *p);
 t_bool			check_cylindre(t_cylindre *p);
 t_bool			check_color(t_rgb *c);
-t_bool			sphere_intersect(t_ray *r, t_sphere *s);
 
 double			vector_sub(t_v3d v1, t_v3d v2);
 double			vector_dot(t_v3d v1, t_v3d v2);
+double			vlength(t_v3d vec);
+double			vlength2(t_v3d v1, t_v3d v2);
+
+t_v3d			point(double x, double y, double z);
+t_v3d			vec3(double x, double y, double z);
+t_v3d			color3(double r, double g, double b);
 
 #endif

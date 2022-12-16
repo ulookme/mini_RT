@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   write_color.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 04:22:20 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/16 18:42:49 by charleshajj      ###   ########.fr       */
+/*   Created: 2022/12/16 16:51:27 by charleshajj       #+#    #+#             */
+/*   Updated: 2022/12/16 18:26:38 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-int	main(int argc, char **argv)
+void	write_color(t_rgb *rgb)
 {
-	t_object	*scene;
-
-	scene = check_open(argc, argv);
-	if (!scene)
-	{
-		printf("Error: Memory allocation failed\n");
-		return (1);
-	}
-	if (!check_scene(scene))
-		;
-	clear_scene(scene);
-	return (0);
+    printf("%d %d %d\n", (int)(255 * rgb->r),
+                        (int)(255 * rgb->g),
+                        (int)(255 * rgb->b));
 }
