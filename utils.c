@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 18:43:32 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/16 22:04:47 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/16 22:24:38 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,20 @@ void	vset(t_v3d *vec, double x, double y, double z)
 	vec->x = x;
     vec->y = y;
     vec->z = z;
+}
+
+/**
+ * @brief Division scalaire vectorielle
+ * 
+ * @param vec 
+ * @param t 
+ * @return t_vec3 
+ */
+t_v3d	vdivide(t_v3d vec, double t)
+{
+    vec.x *= 1 / t;
+    vec.y *= 1 / t;
+    vec.z *= 1 / t;
+
+    return (vec);
 }
