@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/18 19:49:55 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/18 20:23:17 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 # define OBJ_PL 4
 # define OBJ_CY 5
 
-typedef struct s_vec3	t_point3;
-typedef struct s_vec3	t_color3;
+typedef struct s_vecteur3d	t_point3;
+typedef struct s_vecteur3d	t_color3;
 typedef struct s_ray t_ray;
 
 typedef struct	s_ray
