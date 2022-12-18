@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/16 22:24:54 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/18 19:22:05 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@
 # define OBJ_SP 3
 # define OBJ_PL 4
 # define OBJ_CY 5
+
+typedef struct s_vec3	t_point3;
+typedef struct s_vec3	t_color3;
+typedef struct s_ray t_ray;
+
+typedef struct	s_ray
+{
+	t_point3	orig;
+    t_vec3		dir;
+}				t_ray;
 
 typedef struct s_rgb
 {
@@ -132,7 +142,7 @@ t_v3d			vcross(t_v3d v1, t_v3d v2);
 t_v3d			vplus(t_v3d v1, t_v3d v2);
 t_v3d			vminus(t_v3d v1, t_v3d v2);
 t_v3d			vmult_(t_v3d v1, t_v3d v2);
-t_v3d			vdivide(t_v3d vec, double t)
+t_v3d			vdivide(t_v3d vec, double t);
 t_v3d			vunit(t_v3d v1);
 t_v3d			vmin(t_v3d v1, t_v3d v2);
 
