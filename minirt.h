@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/18 19:22:05 by charleshajj      ###   ########.fr       */
+/*   Updated: 2022/12/18 19:49:55 by charleshajj      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,5 +145,6 @@ t_v3d			vmult_(t_v3d v1, t_v3d v2);
 t_v3d			vdivide(t_v3d vec, double t);
 t_v3d			vunit(t_v3d v1);
 t_v3d			vmin(t_v3d v1, t_v3d v2);
+t_v3d			vmult(t_v3d vec, double t);
 
 #endif
