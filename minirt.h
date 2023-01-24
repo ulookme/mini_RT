@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   miniRT.h                                           :+:      :+:    :+:   */
+/*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 04:23:26 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/18 20:45:42 by charleshajj      ###   ########.fr       */
+/*   Updated: 2023/01/24 12:17:23 by cdescour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define OBJ_SP 3
 # define OBJ_PL 4
 # define OBJ_CY 5
-
+/*
 typedef struct s_vecteur3d	t_point3;
 typedef struct s_vecteur3d	t_color3;
 typedef struct s_ray t_ray;
@@ -38,7 +38,7 @@ typedef struct	s_ray
 	t_point3	orig;
     t_vec3		dir;
 }				t_ray;
-
+*/
 typedef struct s_rgb
 {
 	uint8_t			r;
@@ -127,7 +127,7 @@ t_bool			check_sphere(t_sphere *s);
 t_bool			check_plan(t_plan *p);
 t_bool			check_cylindre(t_cylindre *p);
 t_bool			check_color(t_rgb *c);
-
+/*
 double			vector_sub(t_v3d v1, t_v3d v2);
 double			vector_dot(t_v3d v1, t_v3d v2);
 double			vlength(t_v3d vec);
@@ -149,5 +149,5 @@ t_v3d			vmult(t_v3d vec, double t);
 t_ray			ray(t_point3 orig, t_v3d dir);
 
 t_point3		ray_at(t_ray *ray, double t);
-
+*/
 #endif

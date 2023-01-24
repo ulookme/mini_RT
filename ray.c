@@ -6,7 +6,7 @@
 /*   By: charleshajjar <charleshajjar@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 19:51:29 by charleshajj       #+#    #+#             */
-/*   Updated: 2022/12/18 20:59:41 by charleshajj      ###   ########.fr       */
+/*   Updated: 2023/01/24 12:29:40 by cdescour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ t_point3	ray_at(t_ray *ray, double t)
     t_point3 at;
 
     at = vplus(ray->orig, vmult(ray->dir, t));
-    return (at);
+		return (at);
 }
